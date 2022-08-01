@@ -8,12 +8,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.zpf.myplan.databinding.FragmentNotificationsBinding
+import com.zpf.myplan.databinding.FragmentMineBinding
 
 class MineFragment : Fragment() {
 
     private lateinit var mineViewModel: MineViewModel
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentMineBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -27,7 +27,7 @@ class MineFragment : Fragment() {
         mineViewModel =
             ViewModelProvider(this).get(MineViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentMineBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textNotifications

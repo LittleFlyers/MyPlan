@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MyPlan</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_plan">计划</string>
+    <string name="title_event">添加</string>
+    <string name="title_mine">我的</string>
 </resources>
