@@ -3,6 +3,8 @@ package com.zpf.myplan
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.zpf.myplan.databinding.ActivityMainBinding
+import com.zpf.myplan.navigation.NavigationManager
+import com.zpf.myplan.ui.widget.navigation.BottomNavigationMenuView
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,17 +16,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-/*        val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_calender, R.id.navigation_event, R.id.navigation_mine
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)*/
+        val supportFragmentManager = supportFragmentManager
+        val navigationManager =
+            NavigationManager(supportFragmentManager, R.id.nav_host_fragment_activity_main)
+        val bottomNavigationView = findViewById<BottomNavigationMenuView>(R.id.nav_view)
+        bottomNavigationView.setNavigationManager(navigationManager)
     }
 }

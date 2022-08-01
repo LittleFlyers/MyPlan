@@ -17,8 +17,9 @@ public class BottomMenuItemView extends ConstraintLayout {
     private static final float UN_CHOOSE = 0.3f;
     private final TextView textView;
     private final ImageView imageView;
+    private final int mId;
 
-    public BottomMenuItemView(Context context, int titleId, int iconId) {
+    public BottomMenuItemView(Context context, int titleId, int iconId, int id) {
         super(context);
         LayoutInflater.from(context).inflate(R.layout.view_botton_menu_item, this);
         textView = findViewById(R.id.bottom_item_text);
@@ -29,6 +30,7 @@ public class BottomMenuItemView extends ConstraintLayout {
         imageView.setImageResource(iconId);
         imageView.setAlpha(UN_CHOOSE);
         imageView.setOnClickListener(null);
+        mId = id;
     }
 
     public void onChoose() {
@@ -39,6 +41,10 @@ public class BottomMenuItemView extends ConstraintLayout {
     public void onUnChoose() {
         textView.setAlpha(UN_CHOOSE);
         imageView.setAlpha(UN_CHOOSE);
+    }
+
+    public int getId() {
+        return mId;
     }
 
     @Override
