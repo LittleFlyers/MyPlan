@@ -2,6 +2,8 @@ package com.zpf.myplan.ui.widget.navigation;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.widget.ImageView;
@@ -26,6 +28,10 @@ public class BottomMenuItemView extends ConstraintLayout {
         textView.setText(titleId);
         textView.setAlpha(UN_CHOOSE);
         textView.setOnClickListener(null);
+        AssetManager assetManager = context.getAssets();
+        Typeface typeface = Typeface.createFromAsset(assetManager, "fonts/HuXiaoBoNanShenTi-2.otf");
+        textView.setTypeface(typeface);
+
         imageView = findViewById(R.id.bottom_item_icon);
         imageView.setImageResource(iconId);
         imageView.setAlpha(UN_CHOOSE);
